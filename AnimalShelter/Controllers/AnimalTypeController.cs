@@ -5,18 +5,18 @@ using AnimalShelter.Models;
 
 namespace AnimalShelter.Controllers
 {
-  public class TypesController : Controller
+  public class AnimalTypesController : Controller
   {
     private readonly AnimalShelterContext _db;
 
-    public TypesController(AnimalShelterContext db)
+    public AnimalTypesController(AnimalShelterContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Type> model = _db.Types.ToList();
+      List<AnimalType> model = _db.Types.ToList();
       return View(model);
     }
 
@@ -26,7 +26,7 @@ namespace AnimalShelter.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Type type)
+    public ActionResult Create(AnimalType type)
     {
       _db.Types.Add(type);
       _db.SaveChanges();
@@ -35,7 +35,7 @@ namespace AnimalShelter.Controllers
 
     public ActionResult Details(int id)
     {
-      Type thisType = _db.Types.FirstOrDefault(type => type.ItemId == id);
+      AnimalType thisType = _db.Types.FirstOrDefault(type => type.ItemId == id);
       return View(thisType);
     }
   }

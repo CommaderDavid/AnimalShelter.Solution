@@ -3,14 +3,14 @@
 }
 
 @using AnimalShelter.Models;
-@model List<AnimalShelter.Models.Type>;
+@model List<AnimalShelter.Models.AnimalType>;
 
-<h1>Types</h1>
+<h1>Animals in the shelter</h1>
 
 <ul>
-  @foreach(Type type in Model)
+  @foreach(AnimalType item in Model)
   {
-    <li>@Html.ActionLink($"{type.Description}", "Details", new { id = type.ItemId })</li>
+    <li>@Html.ActionLink($"{item.Name}, {item.Type}", "Details", new { id = item.ItemId })</li>
   }
 </ul>
 
