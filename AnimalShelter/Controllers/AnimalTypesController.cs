@@ -16,7 +16,7 @@ namespace AnimalShelter.Controllers
 
     public ActionResult Index()
     {
-      List<AnimalType> model = _db.Types.ToList();
+      List<AnimalType> model = _db.AnimalTypes.ToList();
       return View(model);
     }
 
@@ -28,14 +28,19 @@ namespace AnimalShelter.Controllers
     [HttpPost]
     public ActionResult Create(AnimalType type)
     {
-      _db.Types.Add(type);
+      System.Console.WriteLine(type.Name);
+      System.Console.WriteLine(type.Gender);
+      System.Console.WriteLine(type.DateOfAdmittance);
+      System.Console.WriteLine(type.Breed);
+      System.Console.WriteLine(type.Type);
+      _db.AnimalTypes.Add(type);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      AnimalType thisType = _db.Types.FirstOrDefault(type => type.ItemId == id);
+      AnimalType thisType = _db.AnimalTypes.FirstOrDefault(type => type.AnimalTypeId == id);
       return View(thisType);
     }
   }

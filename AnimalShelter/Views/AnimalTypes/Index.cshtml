@@ -10,8 +10,8 @@
 <ul>
   @foreach(AnimalType item in Model)
   {
-    <li>@Html.ActionLink($"{item.Name}, {item.Type}", "Details", new { id = item.ItemId })</li>
+    <li>@Html.ActionLink($"{item.Name}, {item.Type}", "Details", new { id = item.AnimalTypeId })</li>
   }
 </ul>
 
-<p>@Html.ActionLink("Add new item", "Create")</p>
+<p>@Html.ActionLink("Add new Animal", "Create")</p>
