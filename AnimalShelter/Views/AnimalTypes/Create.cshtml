@@ -20,11 +20,9 @@
   @Html.LabelFor(model => model.Breed)
   @Html.TextBoxFor(model => model.Breed, new {required = "required"})
   <br>
-  @Html.LabelFor(model => model.Type)
-  @Html.DropDownList("Type",
+  @Html.LabelFor(model => model.TypeSpecies)
+  @Html.DropDownList("TypeSpecies",
             new SelectList(new string[] {"Dog", "Cat", "Rabbit", "Bird", "Lizard"}))
-
-
   <br>
   <input type="submit" value="Add new Animal" />
 }

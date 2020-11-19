@@ -32,7 +32,7 @@ namespace AnimalShelter.Controllers
       System.Console.WriteLine(type.Gender);
       System.Console.WriteLine(type.DateOfAdmittance);
       System.Console.WriteLine(type.Breed);
-      System.Console.WriteLine(type.Type);
+      System.Console.WriteLine(type.TypeSpecies);
       _db.AnimalTypes.Add(type);
       _db.SaveChanges();
       return RedirectToAction("Index");
