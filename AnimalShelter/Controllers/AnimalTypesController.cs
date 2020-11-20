@@ -28,11 +28,6 @@ namespace AnimalShelter.Controllers
     [HttpPost]
     public ActionResult Create(AnimalType type)
     {
-      System.Console.WriteLine(type.Name);
-      System.Console.WriteLine(type.Gender);
-      System.Console.WriteLine(type.DateOfAdmittance);
-      System.Console.WriteLine(type.Breed);
-      System.Console.WriteLine(type.TypeSpecies);
       _db.AnimalTypes.Add(type);
       _db.SaveChanges();
       return RedirectToAction("Index");

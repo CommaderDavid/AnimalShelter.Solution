@@ -10,6 +10,7 @@
 <ul>
   @foreach(AnimalType item in Model)
   {
+    
     <li>@Html.ActionLink($"{item.Name}, {item.TypeSpecies}", "Details", new { id = item.AnimalTypeId })</li>
   }
 </ul>
