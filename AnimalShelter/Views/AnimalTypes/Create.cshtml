@@ -15,7 +15,8 @@
             new SelectList(new string[] {"Male", "Female"}))
   <br>
   @Html.LabelFor(model => model.DateOfAdmittance)
-  @Html.TextBoxFor(model => model.DateOfAdmittance, new {required = "required"})
+  @Html.TextBoxFor(model => model.DateOfAdmittance, new {@type="date", @class = "form-control datepicker", required = "required"})
+
   <br>
   @Html.LabelFor(model => model.Breed)
   @Html.TextBoxFor(model => model.Breed, new {required = "required"})
